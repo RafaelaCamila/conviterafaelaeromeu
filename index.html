@@ -1,0 +1,3049 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Rafaela Camila & Romeu Fernandes | Noivado & Casamento</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+     body {
+  background: linear-gradient(145deg, #e8f5ef 0%, #a9ffdb 100%);
+  font-family: "Inter", sans-serif;
+  color: #1a2a2f;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+      /* Textura sutil */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9997;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=");
+        background-repeat: repeat;
+        opacity: 0.06;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      section,
+      .scene-block {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(40px);
+        transition:
+          opacity 1s cubic-bezier(0.25, 0.95, 0.4, 1.05),
+          transform 1s ease,
+          filter 0.8s ease;
+      }
+      section.visible,
+      .scene-block.visible {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+
+      .deco-line-gold {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #c8aa64,
+          #c8aa64,
+          transparent
+        );
+        width: 100px;
+        margin: 1rem auto;
+        position: relative;
+      }
+      .deco-line-gold::after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(200, 170, 100, 0.5) 0%,
+          transparent 80%
+        );
+        animation: subtleGlow 3s infinite;
+      }
+      @keyframes subtleGlow {
+        0% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 0.3;
+        }
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: 400;
+        font-style: italic;
+        color: #1a1a1a;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      /* === CAPA (HERO) com overlay CINZA/BRANCO transparente (ofusca levemente) === */
+      .hero {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+        transition:
+          opacity 1.2s cubic-bezier(0.3, 1, 0.3, 1),
+          filter 0.8s ease;
+        opacity: 1;
+        filter: blur(0);
+        overflow: hidden;
+      }
+      .hero.hide-hero {
+        opacity: 0;
+        filter: blur(10px);
+        pointer-events: none;
+      }
+      .hero-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("Capaa.jpeg");
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.02);
+        transition: transform 8s ease;
+        animation: slowZoom 20s ease infinite alternate;
+      }
+      @keyframes slowZoom {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.06);
+        }
+      }
+      /* Overlay cinza suave (ofusca levemente a foto para legibilidade do texto) */
+      .hero-overlay-gray {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(100, 100, 110, 0.85); /* tom cinza elegante */
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+      }
+      /* elementos com fade-up */
+      .hero-suptitle {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(0.7rem, 4vw, 0.9rem);
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        color: rgba(255, 245, 235, 0.95);
+        font-weight: 400;
+        opacity: 0;
+        transform: translateY(25px);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.2s;
+      }
+      .hero-couple {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.4rem, 9vw, 5rem);
+        font-weight: 600;
+        color: white;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        line-height: 1.2;
+        margin: 0.3rem 0;
+        opacity: 0;
+        transform: translateY(25px);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.5s;
+      }
+      .hero-couple span {
+        font-size: 0.7em;
+        font-weight: 400;
+        display: inline-block;
+        margin: 0 8px;
+      }
+      .hero-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0.5rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.7s;
+      }
+      .hero-line {
+        width: 50px;
+        height: 1px;
+        background: rgba(255, 245, 210, 0.7);
+      }
+      .hero-heart-icon {
+        color: #e6c8a0;
+        font-size: 1rem;
+      }
+      .hero-wedding-date {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1rem, 5vw, 1.3rem);
+        letter-spacing: 2px;
+        color: rgba(255, 250, 240, 0.95);
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(25px);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.9s;
+      }
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-footer {
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        z-index: 15;
+      }
+      .btn-mint {
+        background: rgba(64, 185, 136, 0.9);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(200, 220, 180, 0.7);
+        padding: 14px 38px;
+        border-radius: 60px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      .btn-mint:hover {
+        background: #26874e;
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      }
+      @keyframes bounceFade {
+        0% {
+          transform: translateY(0);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(10px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 0.6;
+        }
+      }
+      .bounce-arrow {
+        animation: bounceFade 2s infinite;
+        color: white;
+        font-size: 1.4rem;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Botão música */
+      .music-note-pulse {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 1100;
+        background: rgba(30, 90, 60, 0.9);
+        backdrop-filter: blur(8px);
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid #c8e6d4;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition:
+          transform 0.2s ease,
+          background 0.3s;
+      }
+      .music-note-pulse:hover {
+        transform: scale(1.05);
+        background: #1d6b3e;
+      }
+      .music-note-pulse i {
+        font-size: 1.9rem;
+        color: #ffffff;
+      }
+      .pulse-ring {
+        animation: pulseSoft 1.4s infinite;
+      }
+      @keyframes pulseSoft {
+        0% {
+          box-shadow: 0 0 0 0 rgba(38, 135, 78, 0.5);
+        }
+        70% {
+          box-shadow: 0 0 0 12px rgba(38, 135, 78, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(38, 135, 78, 0);
+        }
+      }
+     .main-content {
+  background: transparent;  /* Remove o fundo extra */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+      .main-content.reveal {
+        opacity: 1;
+      }
+
+      /* === CONTRA-CAPA (mesma imagem, SEM overlay, bem visível) === */
+      .contracapa-card {
+        position: relative;
+        width: 100%;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        margin: 0;
+        padding: 5rem 1.5rem;
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 1s ease,
+          transform 0.9s ease;
+      }
+      .contracapa-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .contracapa-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("Capaa.jpeg");
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+      }
+      /* SEM OVERLAY - foto totalmente visível, apenas um leve escurecimento para contraste do texto? Não, mantemos sem overlay, apenas um fundo escuro suave opcional? 
+       Para garantir legibilidade do texto branco, aplicamos um tiny gradient sutil somente nas bordas? Mas a foto fica bem visível. 
+       Optamos por nenhum overlay, apenas o texto com sombra para contraste. */
+      .contracapa-content {
+        position: relative;
+        z-index: 3;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2rem;
+        background: transparent;
+      }
+      .contra-suptitle {
+        font-family: "Inter", sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+      }
+      .contra-names {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 6vw, 3rem);
+        font-weight: 600;
+        color: white;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        margin-top: -0.3rem;
+      }
+      .contra-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1.5rem 0 1.8rem;
+      }
+      .contra-line {
+        width: 70px;
+        height: 1px;
+        background: rgba(255, 245, 210, 0.9);
+      }
+      .contra-heart {
+        color: #ffdab9;
+        font-size: 1.2rem;
+      }
+      .contra-date {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        font-weight: 400;
+        color: white;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+        letter-spacing: 1px;
+      }
+
+      /* demais estilos já existentes */
+      .welcome-scene {
+        text-align: center;
+        padding: 3rem 0 1rem;
+      }
+      .welcome-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        font-style: italic;
+        color: #1a1a1a;
+        letter-spacing: 2px;
+      }
+      .typewriter-area {
+        text-align: center;
+        max-width: 750px;
+        margin: 1rem auto;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #5a6e6e;
+        min-height: 160px;
+      }
+
+      .arch-full {
+        width: 100%;
+        position: relative;
+        margin: 2rem 0;
+      }
+      .arco-wide {
+        width: 95.2%;
+        height: 80px;
+        border: 2px solid #26874e;
+        border-bottom: none;
+        border-radius: 60px 60px 0 0;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .box-couple-wide {
+        width: 100%;
+        margin-top: 55px;
+        background: white;
+        border-radius: 48px;
+        padding: 2rem 1rem;
+        text-align: center;
+        position: relative; /* ← SÓ ADICIONAR esta linha */
+        z-index: 2;
+        box-shadow:
+          0 15px 35px rgba(64, 185, 136, 0.15),
+          0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+      }
+      .box-couple-wide:hover {
+        box-shadow: 0 20px 40px rgba(64, 185, 136, 0.2);
+      }
+      .couple-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: #1a1a1a;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease;
+      }
+      .couple-title {
+        font-family: "Playfair Display", cursive;
+        font-size: 2rem;
+        font-style: italic;
+        color: #1a1a1a
+        margin-bottom: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease;
+      }
+      .names-vertical {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.8rem;
+      }
+      .name-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .photo-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #c8aa64;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .photo-circle:hover {
+        transform: scale(1.03);
+      }
+      .name-text {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #1a3c48;
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(4px);
+        transition: all 0.9s ease;
+      }
+      .name-text.reveal {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+      .heart-vertical {
+        font-size: 2.2rem;
+        color: #c97e7e;
+        margin: 0.2rem 0;
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+      .heart-vertical.reveal {
+        opacity: 1;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border-radius: 32px;
+        padding: 2.5rem 2rem;
+        max-width: 600px;
+        margin: 2rem auto;
+       border: 1px solid rgba(64, 185, 136, 0.3);  /* Borda verde menta */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(64, 185, 136, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(64, 185, 136, 0.2);
+}
+      .invite-phrase {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #4a5a5a;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .restriction-box {
+        text-align: center;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(38, 135, 78, 0.3);
+      }
+      .restriction-line {
+        font-size: 0.8rem;
+        color: #5a6e6e;
+        font-weight: 500;
+      }
+
+      .save-the-date-container {
+        max-width: 750px;
+        margin: 1rem auto;
+        padding: 1rem 0.5rem;
+        text-align: center;
+      }
+      .std-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 0.5rem;
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(4px);
+        transition: all 0.8s ease;
+      }
+      .std-title span.script-the {
+        font-family: "Great Vibes", cursive;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-transform: lowercase;
+        font-weight: 400;
+        margin: 0 4px;
+        display: inline-block;
+        top: -6px;
+        color: #b38f6a;
+      }
+      .std-month {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.9rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #1a1a1a;
+        margin-bottom: 0rem !important;
+        padding-bottom: 0rem !important;
+        line-height: 1; /* ← Adicione esta linha */
+        opacity: 0;
+        transition: all 0.7s ease 0.15s;
+      }
+      /* SAVE THE DATE - ESTILO BASE (horizontal) */
+      .day-number-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin: 0 !important;
+        flex-wrap: nowrap;
+      }
+
+      .side-info {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        color: #0f0f0f;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        white-space: nowrap;
+      }
+
+      .side-line {
+        width: 48px;
+        height: 0.8px;
+        background-color: #c8aa64;
+        display: inline-block;
+      }
+
+      .big-day-number {
+        font-family: "Playfair Display", serif;
+        font-size: 7rem;
+        font-weight: 600;
+        line-height: 1;
+        color: #1a1a1a;
+        letter-spacing: -2px;
+        margin-top: -0.8rem;
+        opacity: 0;
+        transform: scale(0.92);
+        transition: all 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) 0.3s;
+      }
+
+      .year-sub {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1rem;
+        letter-spacing: 3px;
+        color: #0e0e0e;
+        margin-top: 0.25rem;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: all 0.6s ease 0.5s;
+      }
+
+      /* RESPONSIVO - AJUSTA TAMANHOS NO CELULAR MAS MANTÉM HORIZONTAL */
+      @media (max-width: 700px) {
+        .day-number-wrapper {
+          gap: 0.8rem;
+        }
+
+        .side-info {
+          font-size: 0.65rem;
+          gap: 0.4rem;
+        }
+
+        .side-line {
+          width: 25px;
+        }
+
+        .big-day-number {
+          font-size: 3.8rem !important;
+        }
+
+        .year-sub {
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .day-number-wrapper {
+          gap: 0.5rem;
+        }
+
+        .side-info {
+          font-size: 0.55rem;
+          gap: 0.3rem;
+        }
+
+        .side-line {
+          width: 18px;
+        }
+
+        .big-day-number {
+          font-size: 3rem !important;
+        }
+      }
+      .std-animate .std-title {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+      .std-animate .std-month {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+      .std-animate .side-info {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .std-animate .big-day-number {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .std-animate .year-sub {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .calendar-wrapper {
+        background: #f8fbfd;
+        border-radius: 48px;
+        padding: 2rem;
+        max-width: 500px;
+        margin: 1rem auto;
+        box-shadow:
+          0 15px 35px rgba(64, 185, 136, 0.15),
+          0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .calendar-month-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        text-align: center;
+        color: #2c5a6e;
+      }
+      .weekdays,
+      .days-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-align: center;
+      }
+      .weekdays {
+        font-size: 0.85rem;
+        color: #5b8cae;
+        margin-bottom: 0.8rem;
+      }
+      .days-grid {
+        gap: 8px;
+      }
+      .day-cell {
+        padding: 12px 0;
+        font-size: 1rem;
+      }
+      .day-11 {
+        background: rgba(224, 139, 139, 0.25);
+        border-radius: 50%;
+        font-weight: 700;
+        color: #b34e4e;
+      }
+      .heart-pulse-icon {
+        display: inline-block;
+        margin-left: 4px;
+        animation: heartBeat 1s infinite;
+      }
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+      .location-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        color: #1a1a1a;
+      }
+      .location-icon {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-image: url("Location.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .map-btn-custom {
+        margin-top: 0.5rem;
+        background: white;
+        color: #26874e;
+        border-color: #26874e;
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .countdown-area {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        margin: 2rem auto;
+      }
+      .cd-card {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.12);
+        padding: 0.9rem 1rem;
+        border-radius: 24px;
+        min-width: 85px;
+        text-align: center;
+        border: 1px solid rgba(38, 135, 78, 0.35);
+      }
+      .cd-number {
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: "Cormorant Garamond";
+        color: #1a1a1a;
+      }
+      .cd-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: #4a8a6a;
+      }
+      .rsvp-card {
+        background: #eef5f9;
+        border-radius: 48px;
+        padding: 2rem;
+        margin: 1rem auto;
+        border: 1px solid rgba(38, 135, 78, 0.2);
+      }
+      .rsvp-card input,
+      .rsvp-card select {
+        padding: 14px 20px;
+        border-radius: 60px;
+        border: 1px solid #cadee8;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .send-btn-custom {
+        background: #26874e;
+        border: none;
+        color: white;
+        padding: 12px 28px;
+        border-radius: 60px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+      }
+      .album-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+      }
+      .album-photo {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.1);
+      }
+      /* Subtítulo do álbum de fotos */
+      .album-hint {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #6b8b7a;
+        text-align: center;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .album-icon {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+      }
+      .plus-pulse {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 1px solid #c8aa64;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        cursor: pointer;
+        animation: softGlow 2s infinite;
+      }
+      @keyframes softGlow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(200, 170, 100, 0.3);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(200, 170, 100, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(200, 170, 100, 0);
+        }
+      }
+      /* SECÇÃO MENSAGENS ESPECIAIS */
+      .messages-card {
+        background: #f4faf8;
+        border-radius: 48px;
+        padding: 2rem;
+        margin: 2rem 0;
+        border: 1px solid rgba(38, 135, 78, 0.2);
+        box-shadow: 0 8px 25px rgba(64, 185, 136, 0.08);
+      }
+
+      .write-invite {
+        text-align: center;
+        padding: 1rem;
+        margin: 1rem auto;
+        background: rgba(64, 185, 136, 0.08);
+        border-radius: 28px;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: #26874e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .write-invite i {
+        font-size: 1.1rem;
+      }
+
+      .msg-input-area input,
+      .msg-input-area textarea {
+        padding: 14px 20px;
+        border-radius: 60px;
+        border: 1px solid #cadee8;
+        width: 100%;
+        margin-bottom: 1rem;
+        font-family: "Inter";
+        background: white;
+        transition: all 0.3s ease;
+      }
+
+      .msg-input-area input:focus,
+      .msg-input-area textarea:focus {
+        outline: none;
+        border-color: #40b988;
+        box-shadow: 0 0 0 3px rgba(64, 185, 136, 0.1);
+      }
+
+      .msg-input-area textarea {
+        border-radius: 28px;
+        resize: vertical;
+      }
+
+      .send-btn-custom {
+        background: #40b988;
+        border: none;
+        color: white;
+        padding: 12px 28px;
+        border-radius: 60px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        font-family: "Inter";
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .send-btn-custom:hover {
+        background: #26874e;
+        transform: translateY(-2px);
+      }
+
+      .messages-list-container {
+        margin-top: 2rem;
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 0.5rem;
+      }
+
+      .messages-list-container::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .messages-list-container::-webkit-scrollbar-track {
+        background: #e0e8e5;
+        border-radius: 10px;
+      }
+
+      .messages-list-container::-webkit-scrollbar-thumb {
+        background: #40b988;
+        border-radius: 10px;
+      }
+
+      .single-msg {
+        padding: 1rem;
+        border-bottom: 1px solid #dce8e5;
+        text-align: left;
+        transition: background 0.2s ease;
+        border-radius: 16px;
+      }
+
+      .single-msg:hover {
+        background: rgba(64, 185, 136, 0.03);
+      }
+
+      .msg-name {
+        font-weight: 700;
+        color: #26874e;
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        display: inline-block;
+        margin-bottom: 0.3rem;
+      }
+
+      .msg-text {
+        color: #4a6272;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        font-style: italic;
+      }
+
+      .msg-text::before {
+        content: '"';
+        margin-right: 4px;
+        color: #40b988;
+        font-size: 0.9rem;
+      }
+
+      .msg-text::after {
+        content: '"';
+        margin-left: 4px;
+        color: #40b988;
+        font-size: 0.9rem;
+      }
+
+      .empty-messages {
+        text-align: center;
+        padding: 2rem;
+        color: #8a9aa0;
+        font-family: "Inter", sans-serif;
+        font-style: italic;
+      }
+
+      @media (max-width: 700px) {
+        .messages-card {
+          padding: 1.5rem;
+        }
+        .single-msg {
+          padding: 0.8rem;
+        }
+      }
+      .rr-cursive {
+        font-family: "Great Vibes", cursive;
+        font-size: 2.5rem;
+        text-align: center;
+        color: #c8aa64;
+        margin: 1.5rem 0;
+      }
+      footer {
+        background: #eef3f8;
+        padding: 2rem;
+        text-align: center;
+      }
+      .footer-logo img {
+        width: 70px;
+        border-radius: 50%;
+        border: 1px solid #c8aa64;
+        margin-bottom: 1rem;
+      }
+      @media (max-width: 700px) {
+        .photo-circle {
+          width: 90px;
+          height: 90px;
+        }
+        .name-text {
+          font-size: 1.2rem;
+        }
+        .big-day-number {
+          font-size: 5rem !important;
+        }
+        .side-line {
+          width: 24px;
+        }
+      }
+      /* Estilo para as iniciais R - fundo branco, letra verde */
+      .initial-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Great Vibes", cursive;
+        font-size: 3.2rem;
+        font-weight: 600;
+        color: #5dc9a5;
+        border: 2px solid #635c4b;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .initial-circle:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Responsivo para mobile */
+      @media (max-width: 700px) {
+        .initial-circle {
+          width: 90px;
+          height: 90px;
+          font-size: 2.2rem;
+        }
+      }
+      /* Aura com blur apenas nas bordas */
+      .box-couple-wide::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        right: -40px;
+        bottom: -40px;
+        background: rgba(60, 229, 144, 0.1); /* Verde bem clarinho */
+        border-radius: 88px;
+        filter: blur(25px);
+        z-index: -1;
+        animation: auraGlow 3s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes auraGlow {
+        0%,
+        100% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 0.45;
+        }
+      }
+      /* Cabeçalho decorativo da seção RSVP */
+      .rsvp-header-deco {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .rsvp-deco-line {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #c8aa64,
+          #c8aa64,
+          transparent
+        );
+      }
+
+      .pulse-calendar {
+        font-size: 1.6rem;
+        color: #40b988;
+        animation: calendarPulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes calendarPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.6;
+        }
+        50% {
+          transform: scale(1.15);
+          opacity: 1;
+          color: #26874e;
+        }
+      }
+
+      /* Título principal */
+      .rsvp-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        text-align: center;
+        margin-bottom: 0.75rem;
+        letter-spacing: 1px;
+      }
+
+      /* Subtítulo */
+      .rsvp-subtitle {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #6b8b7a;
+        text-align: center;
+        font-style: italic;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 700px) {
+        .rsvp-title {
+          font-size: 1.5rem;
+        }
+        .rsvp-subtitle {
+          font-size: 0.8rem;
+        }
+        .rsvp-deco-line {
+          width: 40px;
+        }
+      }
+      /* SECÇÃO MENSAGENS PRINCIPAIS */
+      .mensagens-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .mensagem-card {
+        background: white;
+        border-radius: 24px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(64, 185, 136, 0.15);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .mensagem-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(64, 185, 136, 0.1);
+        border-color: rgba(64, 185, 136, 0.3);
+      }
+
+      .mensagem-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .mensagem-inicial {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #40b988, #26874e);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        font-style: italic;
+        color: white;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .mensagem-nome {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #2c5a6e;
+      }
+
+      .mensagem-texto {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        color: #5a6e6e;
+        line-height: 1.5;
+        font-style: italic;
+        padding-left: 0.5rem;
+        border-left: 3px solid #40b988;
+        margin-top: 0.5rem;
+      }
+
+      .mensagem-texto::before {
+        content: '"';
+        font-size: 1.2rem;
+        color: #40b988;
+        margin-right: 4px;
+      }
+
+      .mensagem-texto::after {
+        content: '"';
+        font-size: 1.2rem;
+        color: #40b988;
+        margin-left: 4px;
+        vertical-align: top;
+      }
+
+      .ver-mais-btn {
+        display: inline-block;
+        background: transparent;
+        border: 2px solid #40b988;
+        color: #40b988;
+        padding: 12px 32px;
+        border-radius: 60px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 1rem auto 2rem;
+        text-align: center;
+      }
+
+      .ver-mais-btn:hover {
+        background: #40b988;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 700px) {
+        .mensagens-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .mensagem-card {
+          padding: 1rem;
+        }
+        .mensagem-inicial {
+          width: 40px;
+          height: 40px;
+          font-size: 1.4rem;
+        }
+      }
+      /* Rodapé da mensagem com ícone */
+      .mensagem-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(64, 185, 136, 0.15);
+        font-size: 0.8rem;
+        color: #40b988;
+      }
+
+      .mensagem-footer i {
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .mensagem-footer i:hover {
+        transform: translateX(3px);
+      }
+
+      .convite-mensagem {
+        background: rgba(64, 185, 136, 0.05);
+        border-radius: 20px;
+        padding: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
+        color: #5a6e6e;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .convite-mensagem i {
+        color: #40b988;
+        font-size: 1rem;
+      }
+      .convite-mensagem {
+        background: rgba(64, 185, 136, 0.05);
+        border-radius: 20px;
+        padding: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
+        color: #5a6e6e;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .convite-mensagem i {
+        color: #40b988;
+        font-size: 1rem;
+      }
+      .msgs-header-deco {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .msgs-deco-line {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #c8aa64,
+          #c8aa64,
+          transparent
+        );
+      }
+
+      .pulse-envelope {
+        font-size: 1.6rem;
+        color: #40b988;
+        animation: envelopePulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes envelopePulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.6;
+        }
+        50% {
+          transform: scale(1.15);
+          opacity: 1;
+          color: #26874e;
+        }
+      }
+      /* Indicador de scroll na contracapa */
+      .scroll-indicator {
+  position: absolute;
+  bottom: -90px;        /* Distância do fundo da tela */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+      .scroll-text {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: lowercase;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 400;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .scroll-arrow {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.8rem;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(6px);
+          opacity: 1;
+        }
+      }
+      .prazo-confirmacao {
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #6b8b7a;
+        text-align: center;
+        font-style: italic;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .prazo-confirmacao i {
+        color: #40b988;
+        font-size: 0.85rem;
+      }
+      /* CONVITE PARA DEIXAR MENSAGEM - ABAIXO DAS MENSAGENS PRINCIPAIS */
+      .convite-mensagem-principal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        background: linear-gradient(
+          135deg,
+          rgba(64, 185, 136, 0.08),
+          rgba(64, 185, 136, 0.03)
+        );
+        border-radius: 60px;
+        padding: 1rem 1.5rem;
+        margin: 1.5rem auto;
+        max-width: 500px;
+        border: 1px solid rgba(64, 185, 136, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .convite-mensagem-principal:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(64, 185, 136, 0.12),
+          rgba(64, 185, 136, 0.06)
+        );
+        border-color: rgba(64, 185, 136, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .convite-icon .pulse-heart {
+        font-size: 1.8rem;
+        color: #e74c3c !important;
+        animation: heartPulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes heartPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 1;
+          color: #26874e;
+        }
+      }
+
+      .convite-texto {
+        text-align: left;
+      }
+
+      .convite-texto h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #2c5a6e;
+        margin-bottom: 0.2rem;
+      }
+
+      .convite-texto p {
+        font-family: "Inter", sans-serif;
+        font-size: 0.7rem;
+        color: #6b8b7a;
+        font-style: italic;
+      }
+
+      .convite-seta {
+        animation: setaBounce 1.5s ease-in-out infinite;
+      }
+
+      .convite-seta i {
+        font-size: 1.2rem;
+        color: #40b988;
+      }
+
+      @keyframes setaBounce {
+        0%,
+        100% {
+          transform: translateX(0);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateX(-5px);
+          opacity: 1;
+        }
+      }
+
+      /* Scroll suave ao clicar */
+      .convite-mensagem-principal {
+        cursor: pointer;
+      }
+
+      @media (max-width: 700px) {
+        .convite-mensagem-principal {
+          padding: 0.8rem 1rem;
+          gap: 0.8rem;
+        }
+        .convite-icon .pulse-heart {
+          font-size: 1.4rem;
+        }
+        .convite-texto h4 {
+          font-size: 0.85rem;
+        }
+        .convite-texto p {
+          font-size: 0.6rem;
+        }
+      }
+      /* Animações para os nomes dos noivos */
+      @keyframes slideFromLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(-80px);
+          filter: blur(4px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes slideFromRight {
+        0% {
+          opacity: 0;
+          transform: translateX(80px);
+          filter: blur(4px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes heartZoom {
+        0% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Estado inicial - invisível */
+      #nameBride,
+      #nameGroom,
+      #heartDiv,
+      .couple-title {
+        opacity: 0;
+      }
+
+      /* Classes que ativam as animações */
+      .name-bride-animate {
+        animation: slideFromLeft 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards !important;
+      }
+
+      .name-groom-animate {
+        animation: slideFromRight 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards !important;
+      }
+
+      .heart-animate {
+        animation: heartZoom 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards !important;
+        animation-delay: 0.3s !important;
+      }
+
+      .couple-title-animate {
+        animation: fadeInDown 0.6s ease forwards !important;
+      }
+      /* Estado inicial do countdown - invisível vindo da direita */
+      .countdown-area {
+        opacity: 0;
+        transform: translateX(50px); /* ← 50px positivo = vem da direita */
+        transition: all 0.8s ease;
+      }
+
+      /* Quando a seção ficar visível */
+      #countdownSection.visible .countdown-area {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Cada card do countdown entra com delay sequencial da direita */
+      .cd-card {
+        opacity: 0;
+        transform: translateX(50px); /* ← vem da direita */
+        transition: all 0.5s ease;
+      }
+
+      #countdownSection.visible .cd-card:nth-child(1) {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.05s;
+      }
+
+      #countdownSection.visible .cd-card:nth-child(2) {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.2s;
+      }
+
+      #countdownSection.visible .cd-card:nth-child(3) {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.4s;
+      }
+
+      #countdownSection.visible .cd-card:nth-child(4) {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.3s;
+      }
+
+      /* CSS FORÇADO PARA SAVE THE DATE - TESTE */
+      #stdContainer.std-animate .std-title {
+        animation: slideUpStd 0.8s ease forwards !important;
+        opacity: 1 !important;
+      }
+
+      #stdContainer.std-animate .std-month {
+        animation: slideUpStd 0.6s ease forwards !important;
+        animation-delay: 0.7s !important;
+        opacity: 1 !important;
+      }
+
+      #stdContainer.std-animate .side-info.left {
+        animation: slideFromLeftStd 0.7s ease forwards !important;
+        animation-delay: 0.9s !important;
+        opacity: 1 !important;
+      }
+
+      #stdContainer.std-animate .big-day-number {
+        animation: slideFromRightStd 0.8s ease forwards !important;
+        animation-delay: 1s !important;
+        opacity: 1 !important;
+      }
+
+      #stdContainer.std-animate .side-info.right {
+        animation: slideFromRightStd 0.8s ease forwards !important;
+        animation-delay: 1s !important;
+        opacity: 1 !important;
+      }
+
+      #stdContainer.std-animate .year-sub {
+        animation: slideUpStd 0.7s ease forwards !important;
+        animation-delay: 1.5s !important;
+        opacity: 1 !important;
+      }
+
+      /* KEYFRAMES */
+      @keyframes slideUpStd {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideFromLeftStd {
+        0% {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideFromRightStd {
+        0% {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Estado inicial - garantir que fiquem invisíveis */
+      #stdContainer .std-title,
+      #stdContainer .std-month,
+      #stdContainer .side-info.left,
+      #stdContainer .big-day-number,
+      #stdContainer .side-info.right,
+      #stdContainer .year-sub {
+        opacity: 0 !important;
+      }
+/* CORAÇÕES FLUTUANTES - APENAS DA ESQUERDA PARA A DIREITA */
+.floating-heart {
+  position: fixed;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  color: #c0c0c0;
+  text-shadow: 0 0 2px rgba(192, 192, 192, 0.5);
+}
+
+/* Todos os corações saem da ESQUERDA e vão para a DIREITA */
+.global-heart-1, .global-heart-2, .global-heart-3, .global-heart-4, .global-heart-5,
+.global-heart-6, .global-heart-7, .global-heart-8, .global-heart-9, .global-heart-10 {
+  left: -30px !important;
+  right: auto !important;
+  animation: floatLeftToRight 12s ease-in-out infinite;
+}
+
+.global-heart-1 { top: 10%; animation-duration: 25s; animation-delay: 0s; }
+.global-heart-2 { top: 20%; animation-duration: 20s; animation-delay: 2s; }
+.global-heart-3 { top: 35%; animation-duration: 30s; animation-delay: 1s; }
+.global-heart-4 { top: 50%; animation-duration: 18s; animation-delay: 4s; }
+.global-heart-5 { top: 65%; animation-duration: 24s; animation-delay: 3s; }
+/* Animação: da esquerda (-30px) até à direita (100% + 30px) */
+@keyframes floatLeftToRight {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(calc(100vw + 60px)) translateY(-60px) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Responsivo - ainda menores no mobile */
+@media (max-width: 700px) {
+  .floating-heart {
+    font-size: 0.6rem;
+  }
+}
+/* Nomes na contracapa - em linhas separadas */
+.contra-nome {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.contra-e {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  margin: 0.2rem 0;
+}
+
+/* Ajustar a data */
+.contra-date {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1rem, 4vw, 1.3rem);
+  font-weight: 400;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 2.5rem;
+}
+
+.scroll-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+.scroll-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+/* Nome do convidado em destaque */
+.nome-convidado-destaque {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #40b988;
+  text-align: center;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.5rem;
+  border-top: 1px solid rgba(64, 185, 136, 0.2);
+  border-bottom: 1px solid rgba(64, 185, 136, 0.2);
+  background: rgba(64, 185, 136, 0.05);
+  border-radius: 60px;
+}
+
+.nome-convidado-destaque span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #6b8b7a;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.nome-convidado-destaque strong {
+  font-size: 2rem;
+  color: #26874e;
+}
+/* Nome do convidado na capa */
+.nome-convidado-capa {
+  font-family: "Playfair Display", serif;
+  font-size:1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 40px;
+  display: inline-block;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+/* CARTÃO 13 HORAS */
+.horario-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f4faf8 100%);
+  border-radius: 48px;
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 300px;
+  margin: 2rem auto;
+  box-shadow: 0 20px 40px rgba(64, 185, 136, 0.15);
+  border: 1px solid rgba(64, 185, 136, 0.2);
+}
+
+.horario-grande {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #26874e;
+  line-height: 1;
+}
+    </style>
+  </head>
+  <body>
+    <body>
+  <!-- CORAÇÕES FLUTUANTES (aparecem em todo o convite) -->
+  <div class="floating-heart global-heart-1">❤️</div>
+  <div class="floating-heart global-heart-2">❤️</div>
+  <div class="floating-heart global-heart-3">❤️</div>
+  <div class="floating-heart global-heart-4">❤️</div>
+  <div class="floating-heart global-heart-5">❤️</div>
+    <div id="musicNoteBtn" class="music-note-pulse pulse-ring">
+      <i id="musicIcon" class="fas fa-play"></i>
+    </div>
+    <audio id="bgAudio" loop preload="auto">
+      <source src="Until I Found You - Stephen Sanchez.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- CAPA: conteúdo do CASAMENTO com overlay cinza suave -->
+    <div class="hero" id="heroSection">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay-gray"></div>
+      <div class="hero-content">
+        <div class="hero-suptitle">O NOIVADO DE</div>
+        <div class="hero-couple">Rafaela & Romeu</div>
+        <div class="hero-divider">
+          <span class="hero-line"></span>
+          <span class="hero-heart-icon">♡</span>
+          <span class="hero-line"></span>
+        </div>
+        <div class="hero-wedding-date">11.07.2026</div>
+      </div>
+      
+      <div class="hero-footer">
+         <div id="nomeConvidadoCapa" class="nome-convidado-capa"></div>
+        <div class="bounce-arrow"><i class="fas fa-chevron-down"></i></div>
+        <button class="btn-mint" id="openInviteBtn">Abrir convite</button>
+      </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+      <!-- CONTRA-CAPA: mesmo fundo, SEM OVERLAY (foto total), conteúdo do NOIVADO -->
+      
+        <section id="contraCapa" class="contracapa-card">
+  <div class="contracapa-bg"></div>
+  
+  <div class="contracapa-content">
+    <div class="contra-suptitle">O NOIVADO DE</div>
+    
+    <!-- Nomes em linhas separadas -->
+    <div class="contra-nome">Rafaela Camila</div>
+    <div class="contra-e">&</div>
+    <div class="contra-nome">Romeu Fernandes</div>
+    
+    <div class="contra-divider"></div>
+    <div class="contra-date">Sábado, 11 de Julho de 2026</div>
+    
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+      <div class="scroll-arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <span class="scroll-text">deslize para continuar</span>
+    </div>
+  </div>
+</section>
+
+      <div class="container welcome-scene scene-block" id="welcomeScene">
+        <div class="welcome-title">Seja Bem-Vindo</div>
+        <div class="deco-line-gold"></div>
+      </div>
+      <div class="container scene-block" id="typewriterScene">
+        <div id="typewriterIntro" class="typewriter-area"></div>
+      </div>
+
+      <div class="container arch-full scene-block" id="coupleScene">
+        <div class="box-couple-wide">
+          <div class="couple-title" id="coupleTitle">Os Noivos</div>
+          <div class="deco-line-gold"></div>
+          <div class="names-vertical">
+            <div class="name-item">
+              <div class="initial-circle">R</div>
+              <div class="name-text" id="nameBride">Rafaela Macuácua</div>
+            </div>
+            <div class="heart-vertical" id="heartDiv">♡</div>
+            <div class="name-item">
+              <div class="initial-circle">R</div>
+              <div class="name-text" id="nameGroom">Romeu Fernandes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container scene-block" id="inviteScene">
+        <div class="glass-card">
+          <div class="invite-phrase">
+            “É com alegria que convidamos você para celebrar conosco este
+            momento único de amor e união. Sua presença tornará este dia ainda
+            mais especial.”
+          </div>
+          <!-- NOME DO CONVIDADO AQUI -->
+  <div id="nomeConvidadoDisplay" class="nome-convidado-destaque"></div>
+  
+  <div class="restriction-box">
+    <div class="restriction-line"><strong>Convite válido para 1 pessoa</strong></div>
+    <div class="restriction-line">Não extensivo a crianças</div>
+  </div>
+</div>
+
+      <section id="calendarSection">
+        <div class="container">
+          <div class="calendar-wrapper">
+            <div class="calendar-month-title">Julho 2026</div>
+            <div class="weekdays">
+              <span>D</span><span>S</span><span>T</span><span>Q</span
+              ><span>Q</span><span>S</span><span>S</span>
+            </div>
+            <div class="days-grid" id="calendarGrid"></div>
+          </div>
+        </div>
+      </section>
+  <!-- CARTÃO SÁBADO, 13 HORAS -->
+<div style="background: linear-gradient(135deg, #ffffff 0%, #f4faf8 100%); border-radius: 32px; padding: 0.8rem 1.5rem; text-align: center; max-width: 200px; margin: 1rem auto; box-shadow: 0 10px 20px rgba(64,185,136,0.1); border: 1px solid rgba(64,185,136,0.2);">
+  <div style="font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 500; color: #26874e; letter-spacing: 1px;">SÁBADO</div>
+  <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: #1a1a1a; line-height: 1;">13:00</div>
+</div>
+
+<!-- CONTAGEM REGRESSIVA -->
+<section id="countdownSection">
+  <div class="container">
+    <div class="countdown-area" id="countdownContainer"></div>
+  </div>
+</section>
+<div class="container" id="saveTheDateScene">
+        <div class="save-the-date-container" id="stdContainer">
+          <div class="std-title">
+            SAVE<span class="script-the"> the</span>DATE
+          </div>
+          <div class="std-month">JULHO</div>
+          <div class="day-number-wrapper">
+            <div class="side-info left">
+              <span class="side-line"></span>SÁBADO
+            </div>
+            <div class="big-day-number">11</div>
+            <div class="side-info right">
+              ÀS 13H.<span class="side-line"></span>
+            </div>
+          </div>
+          <div class="year-sub">2026</div>
+        </div>
+      </div>
+      <section id="locationSection">
+        <div class="container">
+          <div class="date-highlight">
+            <div class="location-wrapper">
+              <div class="location-icon"></div>
+              <span>Guava, Maputo</span>
+            </div>
+            <div>
+              <button
+                class="btn-mint map-btn-custom"
+                id="mapBtn"
+                style="
+                  background: white;
+                  color: #26874e;
+                  border: 1px solid #26874e;
+                "
+              >
+                Ver localização
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="rsvpSection">
+        <div class="container" style="max-width: 600px">
+          <div class="rsvp-card">
+            <!-- Cabeçalho decorativo -->
+            <div class="rsvp-header-deco">
+              <span class="rsvp-deco-line"></span>
+              <i class="fas fa-calendar-alt pulse-calendar"></i>
+              <span class="rsvp-deco-line"></span>
+            </div>
+
+            <!-- Título -->
+            <div class="rsvp-title">Confirme a sua Presença</div>
+
+            <!-- Subtítulo -->
+            <div class="rsvp-subtitle">
+              A sua presença é o melhor presente que podemos receber
+            </div>
+
+            <!-- Formulário -->
+            <form id="rsvpForm">
+              <input
+                type="text"
+                id="rsvpName"
+                placeholder="Seu nome completo"
+              />
+              <select id="rsvpStatus">
+                <option>✔ Sim, estarei presente</option>
+                <option>✖ Não poderei comparecer</option>
+              </select>
+              <button type="submit" class="send-btn-custom">
+                Enviar confirmação
+              </button>
+              <!-- PRAZO DE CONFIRMAÇÃO -->
+              <div class="prazo-confirmacao">
+                <i class="fas fa-calendar-check"></i>
+                <span>Confirmar até o dia 28 de Junho de 2026</span>
+              </div>
+              <p
+                id="formMsg"
+                style="
+                  font-size: 0.8rem;
+                  text-align: center;
+                  margin-top: 0.8rem;
+                "
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section id="albumSection">
+        <div class="container">
+          <div class="album-header">
+            <div class="section-title">Nosso álbum</div>
+            <div class="deco-line-gold"></div>
+            <div id="albumHint" class="album-hint">
+              <img src="galeria.png" alt="álbum" class="album-icon" />
+              <span>Clique no botão “+” para adicionar as suas fotos</span>
+            </div>
+          </div>
+          <div class="album-flex">
+            <img src="Foto22.jpeg" class="album-photo" /><img
+              src="WRR.jpeg"
+              class="album-photo"
+            /><img src="Foto33.jpeg" class="album-photo" />
+            <a href="galeria.html" target="_blank" class="plus-pulse" id="albumPlusBtn" style="text-decoration: none; color: inherit;">
+  +
+</a>
+          </div>
+        </div>
+      </section>
+      <section id="messagesSection">
+        <div class="container">
+          <div class="messages-card">
+            <!-- Cabeçalho decorativo -->
+            <div class="msgs-header-deco">
+              <span class="msgs-deco-line"></span>
+              <i class="fas fa-envelope pulse-envelope"></i>
+              <span class="msgs-deco-line"></span>
+            </div>
+            <div class="section-title">Mensagens especiais</div>
+            <div class="deco-line-gold"></div>
+            <!-- Campo para escrever mensagem -->
+            <div class="write-invite">
+              <i class="fas fa-pen-fancy"></i> Escreva a sua mensagem para os
+              noivos
+            </div>
+            <div class="msg-input-area">
+              <input
+                type="text"
+                id="msgAuthor"
+                placeholder="Seu nome completo"
+              />
+              <textarea
+                id="msgText"
+                rows="3"
+                placeholder="Escreva aqui a sua mensagem..."
+              ></textarea>
+              <button class="send-btn-custom" id="sendMsgBtn">
+                <i class="fas fa-paper-plane"></i> Enviar mensagem
+              </button>
+            </div>
+
+            <!-- Lista de mensagens enviadas -->
+            <div id="messagesList" class="messages-list-container"></div>
+          </div>
+        </div>
+      </section>
+      <!-- SECÇÃO MENSAGENS PRINCIPAIS -->
+      <section id="mensagensPrincipaisSection">
+        <div class="container">
+          <div class="section-title">Mensagens principais</div>
+          <div class="deco-line-gold"></div>
+
+          <div id="mensagensGrid" class="mensagens-grid">
+            <!-- As mensagens vão aparecer aqui dinamicamente -->
+          </div>
+
+          <button id="verMaisBtn" class="ver-mais-btn">
+            Ver mais mensagens
+          </button>
+          <!-- CONVITE PARA DEIXAR MENSAGEM -->
+          <div class="convite-mensagem-principal">
+            <div class="convite-icon">
+              <i class="fas fa-heart pulse-heart" style="color: #e74c3c"></i>
+              <!-- Coração vermelho -->
+            </div>
+            <div class="convite-texto">
+              <h4>Deixe a sua mensagem</h4>
+              <p>
+                Sua mensagem aparecerá aqui e também na seção de mensagens
+                especiais
+              </p>
+            </div>
+            <div class="convite-seta">
+              <i class="fas fa-arrow-up"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="rr-cursive">R & R</div>
+      <footer>
+        <div class="footer-logo"><img src="logoCD.jpeg" alt="logo" /></div>
+        <p>Convite criado para Rafaela & Romeu</p>
+        <p style="font-size: 0.7rem">Todos os direitos reservados · 2026</p>
+        <div class="social-icon">
+          <a
+            href="https://instagram.com/convitedouradomz"
+            target="_blank"
+            style="color: #26874e"
+            ><i class="fab fa-instagram"></i> @convitedouradomz</a
+          >
+        </div>
+      </footer>
+    </div>
+    <script>
+      const audio = document.getElementById("bgAudio");
+      const musicBtn = document.getElementById("musicNoteBtn");
+      const musicIcon = document.getElementById("musicIcon");
+      let musicPlaying = false;
+
+      function updateMusicIcon() {
+        if (musicPlaying) {
+          musicIcon.className = "fas fa-pause";
+        } else {
+          musicIcon.className = "fas fa-play";
+        }
+      }
+
+      function startMusic() {
+        if (!musicPlaying) {
+          audio
+            .play()
+            .then(() => {
+              musicPlaying = true;
+              updateMusicIcon();
+            })
+            .catch(() => {});
+        }
+      }
+
+      musicBtn.addEventListener("click", () => {
+        if (musicPlaying) {
+          audio.pause();
+          musicPlaying = false;
+          updateMusicIcon();
+        } else {
+          audio
+            .play()
+            .then(() => {
+              musicPlaying = true;
+              updateMusicIcon();
+            })
+            .catch(() => {});
+        }
+      });
+
+      updateMusicIcon();
+
+      const hero = document.getElementById("heroSection");
+      const main = document.getElementById("mainContent");
+      const contra = document.getElementById("contraCapa");
+      const welcomeScene = document.getElementById("welcomeScene");
+      const typewriterScene = document.getElementById("typewriterScene");
+      const coupleScene = document.getElementById("coupleScene");
+      const inviteScene = document.getElementById("inviteScene");
+      const stdContainerDiv = document.getElementById("stdContainer");
+      let typewriterStarted = false;
+
+      document.getElementById("openInviteBtn").addEventListener("click", () => {
+        hero.classList.add("hide-hero");
+        main.classList.add("reveal");
+        startMusic();
+        setTimeout(() => {
+          if (contra) contra.classList.add("visible");
+          contra.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 120);
+        setTimeout(() => welcomeScene.classList.add("visible"), 800);
+        setTimeout(() => {
+          typewriterScene.classList.add("visible");
+          if (!typewriterStarted) startTypewriter();
+        }, 1300);
+      });
+
+      const introText =
+        "O amor que nos une é feito de partilha, cumplicidade e sonhos partilhados. É com o coração transbordante que iniciamos esta nova etapa e desejamos tê-los ao nosso lado.";
+      let idx = 0;
+      const typeEl = document.getElementById("typewriterIntro");
+
+      function startTypewriter() {
+        if (typewriterStarted) return;
+        typewriterStarted = true;
+        typeEl.innerHTML = "";
+        function slowType() {
+          if (idx < introText.length) {
+            typeEl.innerHTML += introText.charAt(idx);
+            idx++;
+            setTimeout(slowType, 30);
+          } else setTimeout(() => revealCoupleScene(), 800);
+        }
+        slowType();
+      }
+
+      function revealCoupleScene() {
+        coupleScene.classList.add("visible");
+
+        // Criar um observer para ativar animações apenas no scroll
+        const coupleSection = document.getElementById("coupleScene");
+        const nameBride = document.getElementById("nameBride");
+        const nameGroom = document.getElementById("nameGroom");
+        const heartDiv = document.getElementById("heartDiv");
+        const coupleTitle = document.getElementById("coupleTitle");
+
+        // Garantir que todos começam invisíveis
+        coupleTitle.style.opacity = "0";
+        nameBride.style.opacity = "0";
+        heartDiv.style.opacity = "0";
+        nameGroom.style.opacity = "0";
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // 1. Título "Os Noivos" - 0.2s
+                setTimeout(() => {
+                  coupleTitle.classList.add("couple-title-animate");
+                }, 200);
+
+                // 2. Nome Rafaela - 1s depois
+                setTimeout(() => {
+                  nameBride.classList.add("name-bride-animate");
+                }, 1000);
+
+                // 3. Coração ♡ - 1.8s depois
+                setTimeout(() => {
+                  heartDiv.classList.add("heart-animate");
+                }, 1800);
+
+                // 4. Nome Romeu - 2.5s depois
+                setTimeout(() => {
+                  nameGroom.classList.add("name-groom-animate");
+                }, 2500);
+
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
+
+        observer.observe(coupleSection);
+
+        setTimeout(() => inviteScene.classList.add("visible"), 3200);
+        setTimeout(() => {
+          enableScrollReveal();
+          //if (stdContainerDiv) stdContainerDiv.classList.add("std-animate");
+        }, 3700);
+      }
+      function enableScrollReveal() {
+        const sections = [
+          "calendarSection",
+          "countdownSection",
+          "saveTheDateScene",
+          "locationSection",
+          "rsvpSection",
+          "albumSection",
+          "messagesSection",
+          "mensagensPrincipaisSection",
+        ];
+        sections.forEach((id) => {
+          const section = document.getElementById(id);
+          if (section) {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    setTimeout(
+                      () => entry.target.classList.add("visible"),
+                      200,
+                    );
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.2 },
+            );
+            observer.observe(section);
+          }
+        });
+        const albumHint = document.getElementById("albumHint");
+        if (albumHint) {
+          const hintObserver = new IntersectionObserver(
+            (entries) => {
+              if (entries[0].isIntersecting) {
+                setTimeout(() => albumHint.classList.add("visible-hint"), 300);
+                hintObserver.unobserve(albumHint);
+              }
+            },
+            { threshold: 0.5 },
+          );
+          hintObserver.observe(albumHint);
+        }
+      }
+
+      function buildCalendar() {
+        const year = 2026,
+          month = 6;
+        const first = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const container = document.getElementById("calendarGrid");
+        if (!container) return;
+        container.innerHTML = "";
+        for (let i = 0; i < first; i++) {
+          let e = document.createElement("div");
+          e.classList.add("day-cell");
+          e.innerText = "";
+          container.appendChild(e);
+        }
+        for (let d = 1; d <= daysInMonth; d++) {
+          let cell = document.createElement("div");
+          cell.classList.add("day-cell");
+          if (d === 11) {
+            cell.innerHTML = '11 <span class="heart-pulse-icon">❤️</span>';
+            cell.classList.add("day-11");
+          } else cell.innerText = d;
+          container.appendChild(cell);
+        }
+      }
+      buildCalendar();
+
+      function updateCountdown() {
+        const target = new Date(2026, 6, 11, 14, 0, 0).getTime();
+        const diff = target - new Date().getTime();
+
+        if (diff <= 0) {
+          document.getElementById("countdownContainer").innerHTML =
+            '<div class="cd-card"><div class="cd-number">✨</div><div class="cd-label">Seremos noivos</div></div>';
+          return;
+        }
+
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+
+        // Atualiza apenas os textos, sem recriar os elementos
+        const container = document.getElementById("countdownContainer");
+        if (container) {
+          // Se os elementos já existem, apenas atualiza os textos
+          if (container.children.length === 4) {
+            container.children[0].querySelector(".cd-number").textContent =
+              days;
+            container.children[1].querySelector(".cd-number").textContent =
+              hours;
+            container.children[2].querySelector(".cd-number").textContent =
+              mins;
+            container.children[3].querySelector(".cd-number").textContent =
+              secs;
+          } else {
+            // Primeira execução: cria os elementos
+            container.innerHTML = `
+        <div class="cd-card"><div class="cd-number">${days}</div><div class="cd-label">dias</div></div>
+        <div class="cd-card"><div class="cd-number">${hours}</div><div class="cd-label">horas</div></div>
+        <div class="cd-card"><div class="cd-number">${mins}</div><div class="cd-label">min</div></div>
+        <div class="cd-card"><div class="cd-number">${secs}</div><div class="cd-label">seg</div></div>
+      `;
+          }
+        }
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+    const form = document.getElementById("rsvpForm");
+const formMsg = document.getElementById("formMsg");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const nome = document.getElementById("rsvpName").value;
+  const statusSelect = document.getElementById("rsvpStatus");
+  const status = statusSelect.options[statusSelect.selectedIndex].text;
+  
+  if (!nome) {
+    formMsg.innerText = "Por favor, insira seu nome.";
+    formMsg.style.color = "#b97f7f";
+    return;
+  }
+  
+  const numeroWhatsApp = "258844747730";
+  let statusLimpo = status.replace(/[✔✖]/g, '').trim();
+  
+  const mensagem = `*Confirmação de Presença*%0A*Nome*: ${encodeURIComponent(nome)}%0AStatus: ${encodeURIComponent(statusLimpo)}%0A*Evento:* Noivado de Rafaela & Romeu%0AData: 11 de Julho de 2026`;
+  
+  const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+  
+  window.open(linkWhatsApp, '_blank');
+  
+  formMsg.innerText = "✨ Redirecionando para o WhatsApp... ✨";
+  formMsg.style.color = "#40b988";
+  form.reset();
+});
+let messages = [];
+function renderMessages() {
+  const container = document.getElementById("messagesList");
+  if (!container) return;
+
+  const lastThree = messages.slice(-3).reverse();
+
+  if (lastThree.length === 0) {
+    container.innerHTML =
+      '<div class="empty-messages"><i class="fas fa-heart" style="color: #40b988;"></i><p>✨ Nenhuma mensagem ainda. Seja o primeiro a escrever! ✨</p></div>';
+    return;
+  }
+
+  container.innerHTML = lastThree
+    .map(
+      (m) => `
+      <div class="single-msg">
+        <div class="msg-name">${escapeHtml(m.author)}</div>
+        <div class="msg-text">${escapeHtml(m.text)}</div>
+      </div>
+    `,
+    )
+    .join("");
+}
+
+      function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function (m) {
+          if (m === "&") return "&amp;";
+          if (m === "<") return "&lt;";
+          if (m === ">") return "&gt;";
+          return m;
+        });
+      }
+
+      // Mensagens principais
+      let mensagensPrincipais = [];
+      let mensagensVisiveis = 6;
+
+      function getIniciais(nome) {
+        const partes = nome.split(" ");
+        if (partes.length >= 2) {
+          return (partes[0][0] + partes[1][0]).toUpperCase();
+        }
+        return nome.substring(0, 2).toUpperCase();
+      }
+
+      function renderizarMensagensPrincipais() {
+        const container = document.getElementById("mensagensGrid");
+        if (!container) return;
+        const mensagensParaMostrar = mensagensPrincipais.slice(
+          0,
+          mensagensVisiveis,
+        );
+        const verMaisBtn = document.getElementById("verMaisBtn");
+        if (mensagensVisiveis >= mensagensPrincipais.length) {
+          if (verMaisBtn) verMaisBtn.style.display = "none";
+        } else {
+          if (verMaisBtn) verMaisBtn.style.display = "inline-block";
+        }
+        if (mensagensParaMostrar.length === 0) {
+          container.innerHTML =
+            '<div class="mensagem-card vazia"><div class="mensagem-texto">✨ Nenhuma mensagem ainda. Seja o primeiro a escrever! ✨</div></div>';
+          return;
+        }
+        container.innerHTML = mensagensParaMostrar
+          .map(
+            (msg) => `
+          <div class="mensagem-card">
+            <div class="mensagem-header">
+              <div class="mensagem-inicial">${getIniciais(msg.autor)}</div>
+              <div class="mensagem-nome">${escapeHtml(msg.autor)}</div>
+            </div>
+            <div class="mensagem-texto">${escapeHtml(msg.texto)}</div>
+          </div>
+        `,
+          )
+          .join("");
+      }
+
+      function adicionarMensagemPrincipals(autor, texto) {
+        if (!autor || !texto) return;
+        mensagensPrincipais.unshift({
+          autor: autor.trim(),
+          texto: texto.trim(),
+        });
+        mensagensVisiveis = 6;
+        renderizarMensagensPrincipais();
+      }
+
+      function verMaisMensagens() {
+        mensagensVisiveis += 4;
+        renderizarMensagensPrincipais();
+      }
+
+      // Enviar mensagem usando Firebase
+const btnEnviar = document.getElementById("sendMsgBtn");
+if (btnEnviar) {
+  btnEnviar.addEventListener("click", async function() {
+    const autor = document.getElementById("msgAuthor").value.trim();
+    const texto = document.getElementById("msgText").value.trim();
+    
+    if (!autor || !texto) {
+      alert("Preencha nome e mensagem.");
+      return;
+    }
+    
+    const sucesso = await window.enviarMensagemFirebase(autor, texto);
+    if (sucesso) {
+      document.getElementById("msgAuthor").value = "";
+      document.getElementById("msgText").value = "";
+      alert("✨ Mensagem enviada com sucesso! ✨");
+    } else {
+      alert("Erro ao enviar mensagem. Tente novamente.");
+    }
+  });
+}
+
+      document
+        .getElementById("mapBtn")
+        ?.addEventListener("click", () =>
+          alert("📍 Guava, Maputo – Localização encantadora"),
+        );
+
+      // Inicializar mensagens principais
+      document.addEventListener("DOMContentLoaded", function () {
+        renderizarMensagensPrincipais();
+        const verMaisBtn = document.getElementById("verMaisBtn");
+        if (verMaisBtn) {
+          verMaisBtn.addEventListener("click", verMaisMensagens);
+        }
+      });
+      // Scroll suave para o formulário de mensagens
+      const conviteMsg = document.querySelector(".convite-mensagem-principal");
+      if (conviteMsg) {
+        conviteMsg.addEventListener("click", function () {
+          const messagesSection = document.getElementById("messagesSection");
+          if (messagesSection) {
+            messagesSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      }
+      // Observer específico para o SAVE THE DATE
+      const saveTheDateObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const stdContainer = document.getElementById("stdContainer");
+              if (stdContainer) {
+                stdContainer.classList.add("std-animate");
+                console.log("SAVE THE DATE animação ativada!");
+              }
+              saveTheDateObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      const saveTheDateSection = document.getElementById("saveTheDateScene");
+      if (saveTheDateSection) {
+        saveTheDateObserver.observe(saveTheDateSection);
+      } else {
+        console.log("Elemento saveTheDateScene não encontrado");
+      }
+      // Pegar nome da URL e mostrar na seção de convite
+// PEGAR NOME DA URL E MOSTRAR (SUPORTA SOLO E CASAL)
+// PEGAR NOME DA URL E MOSTRAR (SUPORTA SOLO E CASAL)
+function mostrarNomeConvidado() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const nome1 = urlParams.get('nome');
+  const nome2 = urlParams.get('nome2');
+  const nomeDisplay = document.getElementById('nomeConvidadoDisplay');
+  const nomeCapa = document.getElementById('nomeConvidadoCapa');
+  
+  // Encontrar os elementos do restriction-box
+  const restrictionLines = document.querySelectorAll('.restriction-box .restriction-line');
+  
+  if (nome1 && nome2) {
+    // CASAL
+    const nome1Dec = decodeURIComponent(nome1);
+    const nome2Dec = decodeURIComponent(nome2);
+    
+    if (nomeDisplay) {
+      nomeDisplay.innerHTML = `
+        <span>🎁 Convidados especiais</span>
+        <strong> ${nome1Dec} & ${nome2Dec} </strong>
+      `;
+      nomeDisplay.style.display = 'block';
+    }
+    
+    if (nomeCapa) {
+      nomeCapa.innerHTML = `${nome1Dec} & ${nome2Dec}`;
+      nomeCapa.style.display = 'block';
+    }
+    
+    // Atualizar o texto do restriction-box para CASAL
+    if (restrictionLines[0]) {
+      restrictionLines[0].innerHTML = '<strong>Convite válido para 2 pessoas</strong>';
+    }
+    
+  } else if (nome1) {
+    // INDIVIDUAL
+    const nomeDec = decodeURIComponent(nome1);
+    
+    if (nomeDisplay) {
+      nomeDisplay.innerHTML = `
+        <span>🎁 Convidado especial</span>
+        <strong> ${nomeDec}</strong>
+      `;
+      nomeDisplay.style.display = 'block';
+    }
+    
+    if (nomeCapa) {
+      nomeCapa.innerHTML = `${nomeDec}`;
+      nomeCapa.style.display = 'block';
+    }
+    
+    // Atualizar o texto do restriction-box para INDIVIDUAL
+    if (restrictionLines[0]) {
+      restrictionLines[0].innerHTML = '<strong>Convite válido para 1 pessoa</strong>';
+    }
+    
+  } else {
+    if (nomeDisplay) nomeDisplay.style.display = 'none';
+    if (nomeCapa) nomeCapa.style.display = 'none';
+  }
+}
+// Forçar a chamada da função quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+  mostrarNomeConvidado();
+});
+    </script>
+    <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+  import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-storage.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBW5iArzRd0pUVS2z5JM5N2QIxP1jL1v1Q",
+    authDomain: "rafaelaeromeu-a1929.firebaseapp.com",
+    projectId: "rafaelaeromeu-a1929",
+    storageBucket: "rafaelaeromeu-a1929.firebasestorage.app",
+    messagingSenderId: "319622734793",
+    appId: "1:319622734793:web:60f6000f60bf06cef47e18"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const storage = getStorage(app);
+  
+  // ========== MENSAGENS ==========
+  const mensagensRef = collection(db, "mensagens-rafaela-romeu");
+  
+  function carregarMensagensFirebase() {
+    const q = query(mensagensRef, orderBy("timestamp", "desc"));
+    onSnapshot(q, (snapshot) => {
+      const mensagensFirebase = [];
+      snapshot.forEach(doc => mensagensFirebase.push(doc.data()));
+      
+      if (typeof mensagensPrincipais !== 'undefined') {
+        mensagensPrincipais = mensagensFirebase;
+        if (typeof renderizarMensagensPrincipais === 'function') renderizarMensagensPrincipais();
+      }
+      
+      const ultimas3 = mensagensFirebase.slice(0, 3);
+      const container = document.getElementById("messagesList");
+      if (container) {
+        if (ultimas3.length === 0) {
+          container.innerHTML = '<div class="empty-messages"><i class="fas fa-heart"></i><p>✨ Seja o primeiro a deixar uma mensagem! ✨</p></div>';
+        } else {
+          container.innerHTML = ultimas3.map(m => `
+            <div class="single-msg">
+              <div class="msg-name">${escapeHtml(m.autor)}</div>
+              <div class="msg-text">${escapeHtml(m.texto)}</div>
+            </div>
+          `).join("");
+        }
+      }
+    });
+  }
+
+  window.enviarMensagemFirebase = async function(autor, texto) {
+    if (!autor || !texto) return false;
+    try {
+      await addDoc(mensagensRef, {
+        autor: autor.trim(),
+        texto: texto.trim(),
+        timestamp: Date.now()
+      });
+      return true;
+    } catch (err) {
+      console.error("Erro ao enviar:", err);
+      return false;
+    }
+  };
+
+  // ========== FOTOS ==========
+  const fotosRef = collection(db, "fotos-rafaela-romeu");
+  
+  window.uploadFotoFirebase = async function(file, nomeConvidado) {
+    if (!file) return null;
+    const nomeArquivo = Date.now() + '_' + file.name;
+    const storageRef = ref(storage, 'fotos/' + nomeArquivo);
+    
+    try {
+      const snapshot = await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(snapshot.ref);
+      
+      await addDoc(fotosRef, {
+        url: url,
+        nome: nomeConvidado,
+        timestamp: Date.now()
+      });
+      return url;
+    } catch (err) {
+      console.error("Erro no upload:", err);
+      return null;
+    }
+  };
+
+  function carregarFotosFirebase() {
+    const q = query(fotosRef, orderBy("timestamp", "desc"));
+    onSnapshot(q, (snapshot) => {
+      const fotos = [];
+      snapshot.forEach(doc => fotos.push(doc.data()));
+      
+      const container = document.querySelector(".album-flex");
+      if (!container) return;
+      
+      const dynamicPhotos = container.querySelectorAll('.dynamic-photo');
+      dynamicPhotos.forEach(photo => photo.remove());
+      
+      fotos.forEach(foto => {
+        const imgElement = document.createElement('img');
+        imgElement.src = foto.url;
+        imgElement.className = 'album-photo dynamic-photo';
+        imgElement.style.cursor = 'pointer';
+        imgElement.onclick = () => window.open(foto.url, '_blank');
+        
+        const plusBtn = container.querySelector('.plus-pulse');
+        if (plusBtn) {
+          container.insertBefore(imgElement, plusBtn);
+        } else {
+          container.appendChild(imgElement);
+        }
+      });
+    });
+  }
+
+
+  window.escapeHtml = function(str) {
+    if (!str) return "";
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === "&") return "&amp;";
+      if (m === "<") return "&lt;";
+      if (m === ">") return "&gt;";
+      return m;
+    });
+  };
+
+  carregarMensagensFirebase();
+  carregarFotosFirebase();
+</script>
+  </body>
+</html>

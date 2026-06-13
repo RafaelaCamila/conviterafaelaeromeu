@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria de Fotos | Rafaela & Romeu</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(145deg, #e8f5ef 0%, #a9ffdb 100%);
+        min-height: 100vh;
+        padding: 2rem 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .header h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.5rem;
+        color: #1a1a1a;
+      }
+
+      .header p {
+        color: #5a6e6e;
+        margin-top: 0.5rem;
+      }
+
+      .upload-card {
+        background: white;
+        border-radius: 32px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .upload-area {
+        border: 2px dashed #40b988;
+        border-radius: 24px;
+        padding: 2rem;
+        margin: 1rem 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .upload-area:hover {
+        background: rgba(64, 185, 136, 0.05);
+        border-color: #26874e;
+      }
+
+      .upload-area i {
+        font-size: 3rem;
+        color: #40b988;
+        margin-bottom: 1rem;
+      }
+
+      .upload-area p {
+        color: #5a6e6e;
+      }
+
+      .tipo-media {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin: 1rem 0;
+      }
+
+      .tipo-btn {
+        background: #e8f5ef;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 60px;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        color: #26874e;
+        transition: all 0.3s;
+      }
+
+      .tipo-btn.ativo {
+        background: #40b988;
+        color: white;
+      }
+
+      .nome-input {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.8rem 1rem;
+        border: 1px solid #cadee8;
+        border-radius: 60px;
+        margin: 1rem auto;
+        font-family: "Inter", sans-serif;
+      }
+
+      .upload-btn {
+        background: #40b988;
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 60px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .upload-btn:hover {
+        background: #26874e;
+        transform: translateY(-2px);
+      }
+
+      .galeria-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .media-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .media-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .media-card img,
+      .media-card video {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background: #f0f0f0;
+      }
+
+      .media-info {
+        padding: 1rem;
+      }
+
+      .media-nome {
+        font-weight: 600;
+        color: #26874e;
+        margin-bottom: 0.3rem;
+      }
+
+      .media-data {
+        font-size: 0.7rem;
+        color: #8a9aa0;
+      }
+
+      .tipo-badge {
+        display: inline-block;
+        background: #e8f5ef;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        color: #26874e;
+        margin-top: 0.5rem;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 2rem;
+        color: #5a6e6e;
+      }
+
+      .back-btn {
+        display: inline-block;
+        background: transparent;
+        border: 1px solid #40b988;
+        color: #40b988;
+        padding: 0.5rem 1rem;
+        border-radius: 60px;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        transition: all 0.3s;
+      }
+
+      .back-btn:hover {
+        background: #40b988;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="javascript:history.back()" class="back-btn"
+        ><i class="fas fa-arrow-left"></i> Voltar</a
+      >
+
+      <div class="header">
+        <h1>📸 Galeria de Momentos</h1>
+        <p>Rafaela & Romeu</p>
+      </div>
+
+      <!-- Card de Upload -->
+      <div class="upload-card">
+        <h3><i class="fas fa-plus-circle"></i> Adicionar foto ou vídeo</h3>
+        <div class="tipo-media">
+          <button class="tipo-btn ativo" data-tipo="foto">📷 Foto</button>
+          <button class="tipo-btn" data-tipo="video">🎥 Vídeo</button>
+        </div>
+        <input
+          type="text"
+          id="nomeUpload"
+          class="nome-input"
+          placeholder="Seu nome completo"
+        />
+        <div id="uploadArea" class="upload-area">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Clique para selecionar uma foto ou vídeo</p>
+          <p style="font-size: 0.7rem">Formatos: JPG, PNG, MP4 (máx 50MB)</p>
+        </div>
+        <input
+          type="file"
+          id="fileInput"
+          style="display: none"
+          accept="image/*,video/*"
+        />
+        <button id="uploadBtn" class="upload-btn" disabled>📤 Enviar</button>
+        <div
+          id="uploadStatus"
+          style="margin-top: 1rem; font-size: 0.8rem"
+        ></div>
+      </div>
+
+      <!-- Galeria -->
+      <h3><i class="fas fa-images"></i> Todos os momentos</h3>
+      <div id="galeriaGrid" class="galeria-grid">
+        <div class="loading">
+          <i class="fas fa-spinner fa-pulse"></i> Carregando fotos...
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        query,
+        orderBy,
+        onSnapshot,
+      } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+      import {
+        getStorage,
+        ref,
+        uploadBytes,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-storage.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBW5iArzRd0pUVS2z5JM5N2QIxP1jL1v1Q",
+        authDomain: "rafaelaeromeu-a1929.firebaseapp.com",
+        projectId: "rafaelaeromeu-a1929",
+        storageBucket: "rafaelaeromeu-a1929.firebasestorage.app",
+        messagingSenderId: "319622734793",
+        appId: "1:319622734793:web:60f6000f60bf06cef47e18",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const storage = getStorage(app);
+      const fotosRef = collection(db, "fotos-rafaela-romeu");
+
+      let tipoSelecionado = "foto";
+
+      // Tipo de mídia
+      document.querySelectorAll(".tipo-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".tipo-btn")
+            .forEach((b) => b.classList.remove("ativo"));
+          btn.classList.add("ativo");
+          tipoSelecionado = btn.dataset.tipo;
+
+          const fileInput = document.getElementById("fileInput");
+          fileInput.accept = tipoSelecionado === "foto" ? "image/*" : "video/*";
+        });
+      });
+
+      // Upload Area
+      const uploadArea = document.getElementById("uploadArea");
+      const fileInput = document.getElementById("fileInput");
+      const nomeInput = document.getElementById("nomeUpload");
+      const uploadBtn = document.getElementById("uploadBtn");
+      let selectedFile = null;
+
+      uploadArea.addEventListener("click", () => fileInput.click());
+
+      fileInput.addEventListener("change", (e) => {
+        selectedFile = e.target.files[0];
+        if (selectedFile) {
+          uploadBtn.disabled = false;
+          document.getElementById("uploadStatus").innerHTML =
+            `<span style="color:#40b988">✓ Arquivo selecionado: ${selectedFile.name}</span>`;
+        }
+      });
+
+      uploadBtn.addEventListener("click", async () => {
+        const nome = nomeInput.value.trim();
+        if (!nome) {
+          alert("Por favor, digite o seu nome.");
+          return;
+        }
+        if (!selectedFile) {
+          alert("Por favor, selecione um arquivo.");
+          return;
+        }
+
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML =
+          '<i class="fas fa-spinner fa-pulse"></i> Enviando...';
+        document.getElementById("uploadStatus").innerHTML = "";
+
+        const nomeArquivo = Date.now() + "_" + selectedFile.name;
+        const storageRef = ref(storage, "fotos/" + nomeArquivo);
+
+        try {
+          const snapshot = await uploadBytes(storageRef, selectedFile);
+          const url = await getDownloadURL(snapshot.ref);
+
+          await addDoc(fotosRef, {
+            url: url,
+            nome: nome,
+            tipo: tipoSelecionado,
+            timestamp: Date.now(),
+          });
+
+          document.getElementById("uploadStatus").innerHTML =
+            '<span style="color:#26874e">✨ Enviado com sucesso! ✨</span>';
+          nomeInput.value = "";
+          selectedFile = null;
+          fileInput.value = "";
+          uploadBtn.disabled = true;
+
+          setTimeout(() => {
+            document.getElementById("uploadStatus").innerHTML = "";
+          }, 3000);
+        } catch (err) {
+          console.error(err);
+          document.getElementById("uploadStatus").innerHTML =
+            '<span style="color:#e74c3c">❌ Erro ao enviar. Tente novamente.</span>';
+          uploadBtn.disabled = false;
+          uploadBtn.innerHTML = "📤 Enviar";
+        }
+      });
+
+      // Carregar e mostrar galeria
+      function carregarGaleria() {
+        const q = query(fotosRef, orderBy("timestamp", "desc"));
+        onSnapshot(q, (snapshot) => {
+          const fotos = [];
+          snapshot.forEach((doc) => fotos.push(doc.data()));
+
+          const grid = document.getElementById("galeriaGrid");
+          if (fotos.length === 0) {
+            grid.innerHTML =
+              '<div class="loading">✨ Nenhuma foto ou vídeo ainda. Seja o primeiro a adicionar! ✨</div>';
+            return;
+          }
+
+          grid.innerHTML = fotos
+            .map(
+              (foto) => `
+          <div class="media-card">
+            ${
+              foto.tipo === "video"
+                ? `<video controls src="${foto.url}"></video>`
+                : `<img src="${foto.url}" alt="Momento especial" loading="lazy">`
+            }
+            <div class="media-info">
+              <div class="media-nome">❤️ ${escapeHtml(foto.nome)}</div>
+              <div class="media-data">${new Date(foto.timestamp).toLocaleDateString("pt-PT")}</div>
+              <span class="tipo-badge">${foto.tipo === "video" ? "🎥 Vídeo" : "📷 Foto"}</span>
+            </div>
+          </div>
+        `,
+            )
+            .join("");
+        });
+      }
+
+      function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function (m) {
+          if (m === "&") return "&amp;";
+          if (m === "<") return "&lt;";
+          if (m === ">") return "&gt;";
+          return m;
+        });
+      }
+
+      carregarGaleria();
+    </script>
+  </body>
+</html>
