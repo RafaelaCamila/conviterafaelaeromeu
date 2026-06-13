@@ -2066,6 +2066,256 @@
   color: #26874e;
   line-height: 1;
 }
+/* RODAPÉ MELHORADO */
+footer {
+  background: linear-gradient(135deg, #1a2a2f 0%, #0f1e22 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 3rem;
+  border-radius: 48px 48px 0 0;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #40b988, #c8aa64, #40b988, transparent);
+}
+
+.footer-logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #40b988;
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
+
+.footer-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #40b988;
+  margin-bottom: 0.5rem;
+}
+
+.footer-names i {
+  font-size: 0.8rem;
+  color: #e74c3c;
+}
+
+.footer-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #c8aa64;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #40b988, transparent);
+}
+
+.footer-divider i {
+  color: #40b988;
+  font-size: 0.9rem;
+}
+
+.footer-credit {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: #8a9aa0;
+  margin-bottom: 0.3rem;
+}
+
+.footer-rights {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  color: #6b8b7a;
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: #40b988;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(64, 185, 136, 0.3);
+  border-radius: 60px;
+  transition: all 0.3s;
+}
+
+.footer-social a:hover {
+  background: rgba(64, 185, 136, 0.1);
+  border-color: #40b988;
+  transform: translateY(-2px);
+}
+/* FORÇAR RODAPÉ A OCUPAR 100% LARGURA */
+footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  margin-top: 3rem !important;
+  border-radius: 48px 48px 0 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Garantir que o conteúdo do footer fique centralizado */
+footer .footer-logo,
+footer .footer-names,
+footer .footer-date,
+footer .footer-divider,
+footer .footer-credit,
+footer .footer-rights,
+footer .footer-social {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* RODAPÉ - LARGURA TOTAL SEM BORDAS ARREDONDADAS */
+footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Forçar o elemento pai do footer a não limitar a largura */
+#inviteScene {
+  max-width: 100% !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+.glass-menu {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  background: rgba(30, 50, 45, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 0.7rem 1.5rem;
+  border-radius: 60px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border: 1px solid rgba(64, 185, 136, 0.3);
+  transition: all 0.3s ease;
+  
+  /* NOVO: começa escondido */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(20px);
+}
+
+.glass-menu.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* GLASS MENU FLUTUANTE */
+.glass-menu {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  background: rgba(30, 50, 45, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 0.7rem 1.5rem;
+  border-radius: 60px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border: 1px solid rgba(64, 185, 136, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glass-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.glass-menu-item i {
+  font-size: 1.2rem;
+  color: #40b988;
+}
+
+.glass-menu-item span {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.glass-menu-item:hover {
+  background: rgba(64, 185, 136, 0.25);
+  transform: translateY(-3px);
+}
+
+.glass-menu-item:active {
+  transform: translateY(0);
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .glass-menu {
+    padding: 0.5rem 1rem;
+    gap: 0.2rem;
+    bottom: 15px;
+  }
+  
+  .glass-menu-item {
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .glass-menu-item i {
+    font-size: 1rem;
+  }
+  
+  .glass-menu-item span {
+    font-size: 0.55rem;
+  }
+}
     </style>
   </head>
   <body>
@@ -2379,19 +2629,38 @@
         </div>
       </section>
       <div class="rr-cursive">R & R</div>
-      <footer>
-        <div class="footer-logo"><img src="logoCD.jpeg" alt="logo" /></div>
-        <p>Convite criado para Rafaela & Romeu</p>
-        <p style="font-size: 0.7rem">Todos os direitos reservados · 2026</p>
-        <div class="social-icon">
-          <a
-            href="https://instagram.com/convitedouradomz"
-            target="_blank"
-            style="color: #26874e"
-            ><i class="fab fa-instagram"></i> @convitedouradomz</a
-          >
-        </div>
-      </footer>
+     <footer style="width: 100%; background: linear-gradient(135deg, #1a2a2f 0%, #0f1e22 100%); padding: 3rem 2rem; text-align: center; margin: 0; margin-top: 3rem; border-radius: 0; position: relative; left: 0; right: 0; box-sizing: border-box;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="footer-logo">
+      <img src="logoCD.jpeg" alt="logo" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #40b988; padding: 0.2rem; margin-bottom: 1rem;" />
+    </div>
+    
+    <div class="footer-names" style="display: flex; align-items: center; justify-content: center; gap: 1rem; font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #40b988; margin-bottom: 0.5rem;">
+      <span>Rafaela Camila</span>
+      <i class="fas fa-heart" style="color: #e74c3c; font-size: 0.8rem;"></i>
+      <span>Romeu Fernandes</span>
+    </div>
+    
+    <div class="footer-date" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: #c8aa64; letter-spacing: 3px; margin-bottom: 1.5rem;">
+      11.07.2026
+    </div>
+    
+    <div class="footer-divider" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+      <span style="width: 60px; height: 1px; background: linear-gradient(90deg, transparent, #40b988, transparent);"></span>
+      <i class="fas fa-ring" style="color: #40b988; font-size: 0.9rem;"></i>
+      <span style="width: 60px; height: 1px; background: linear-gradient(90deg, transparent, #40b988, transparent);"></span>
+    </div>
+    
+    <p class="footer-credit" style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #8a9aa0; margin-bottom: 0.3rem;">Convite criado com amor para Rafaela & Romeu</p>
+    <p class="footer-rights" style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #6b8b7a; margin-bottom: 1rem;">© 2026 · Todos os direitos reservados</p>
+    
+    <div class="footer-social">
+      <a href="https://instagram.com/convitedouradomz" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #40b988; text-decoration: none; padding: 0.5rem 1rem; border: 1px solid rgba(64, 185, 136, 0.3); border-radius: 60px; transition: all 0.3s;">
+        <i class="fab fa-instagram"></i> @convitedouradomz
+      </a>
+    </div>
+  </div>
+</footer>
     </div>
     <script>
       const audio = document.getElementById("bgAudio");
@@ -2796,12 +3065,9 @@ if (btnEnviar) {
   });
 }
 
-      document
-        .getElementById("mapBtn")
-        ?.addEventListener("click", () =>
-          alert("📍 Guava, Maputo – Localização encantadora"),
-        );
-
+     document.getElementById("mapBtn")?.addEventListener("click", () => {
+  window.open("https://maps.app.goo.gl/iodqMytdKmKdQFSZ7", "_blank");
+});
       // Inicializar mensagens principais
       document.addEventListener("DOMContentLoaded", function () {
         renderizarMensagensPrincipais();
@@ -3044,6 +3310,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
   carregarMensagensFirebase();
   carregarFotosFirebase();
+  // Glass Menu - Scroll suave para as secções
+document.querySelectorAll('.glass-menu-item[data-target]').forEach(item => {
+  item.addEventListener('click', function() {
+    const targetId = this.getAttribute('data-target');
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Glass Menu - Localização (abrir mapa)
+const menuLocation = document.getElementById('menuLocation');
+if (menuLocation) {
+  menuLocation.addEventListener('click', function() {
+    window.open('https://maps.app.goo.gl/iodqMytdKmKdQFSZ7', '_blank');
+  });
+}
+// Mostrar Glass Menu quando chegar ao R&R (rr-cursive) e fica fixo
+const glassMenu = document.getElementById('glassMenu');
+const rrElement = document.querySelector('.rr-cursive');
+
+let menuJaMostrado = false;
+
+if (glassMenu && rrElement) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !menuJaMostrado) {
+        glassMenu.classList.add('visible');
+        menuJaMostrado = true; // Só mostra uma vez
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  observer.observe(rrElement);
+}
 </script>
+<!-- GLASS MENU FLUTUANTE -->
+<div class="glass-menu" id="glassMenu">
+  <div class="glass-menu-item" data-target="welcomeScene">
+    <i class="fas fa-home"></i>
+    <span>Início</span>
+  </div>
+  <div class="glass-menu-item" data-target="saveTheDateScene">
+    <i class="fas fa-clock"></i>
+    <span>Horário</span>
+  </div>
+  <div class="glass-menu-item" id="menuLocation">
+    <i class="fas fa-map-marker-alt"></i>
+    <span>Local</span>
+  </div>
+  <div class="glass-menu-item" data-target="rsvpSection">
+    <i class="fas fa-calendar-check"></i>
+    <span>RSVP</span>
+  </div>
+</div>
   </body>
 </html>
