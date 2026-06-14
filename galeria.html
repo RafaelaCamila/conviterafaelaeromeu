@@ -349,8 +349,19 @@
           });
 
           const data = await response.json();
+          console.log("Resposta ImgBB:", data);
           if (!data.success) throw new Error("Erro no ImgBB");
           const url = data.data.url;
+          console.log("URL da foto:", url);
+
+          await addDoc(fotosRef, {
+            url: url,
+            nome: nome,
+            timestamp: Date.now(),
+          });
+
+          console.log("Guardado no Firestore!");
+          console.log("URL da foto:", url);
 
           document.getElementById("uploadStatus").innerHTML =
             '<span style="color:#26874e">✨ Enviado com sucesso! ✨</span>';
