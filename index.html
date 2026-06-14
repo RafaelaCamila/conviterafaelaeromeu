@@ -2392,7 +2392,7 @@ footer {
 
       <div class="container arch-full scene-block" id="coupleScene">
         <div class="box-couple-wide">
-          <div class="couple-title" id="coupleTitle">Os Namorados</div>
+          <div class="couple-title" id="coupleTitle">Os Noivos</div>
           <div class="deco-line-gold"></div>
           <div class="names-vertical">
             <div class="name-item">
@@ -2983,7 +2983,7 @@ function renderMessages() {
       }
 
       // Mensagens principais
-      let mensagensPrincipais = [];
+window.mensagensPrincipais = [];
       let mensagensVisiveis = 6;
 
       function getIniciais(nome) {
@@ -2994,8 +2994,7 @@ function renderMessages() {
         return nome.substring(0, 2).toUpperCase();
       }
 
-      function renderizarMensagensPrincipais() {
-        const container = document.getElementById("mensagensGrid");
+window.renderizarMensagensPrincipais = function() {        const container = document.getElementById("mensagensGrid");
         if (!container) return;
         const mensagensParaMostrar = mensagensPrincipais.slice(
           0,
@@ -3206,11 +3205,10 @@ document.addEventListener('DOMContentLoaded', function() {
     onSnapshot(q, (snapshot) => {
       const mensagensFirebase = [];
       snapshot.forEach(doc => mensagensFirebase.push(doc.data()));
-      
-      if (typeof mensagensPrincipais !== 'undefined') {
-        mensagensPrincipais = mensagensFirebase;
-        if (typeof renderizarMensagensPrincipais === 'function') renderizarMensagensPrincipais();
-      }
+     window.mensagensPrincipais = mensagensFirebase;
+if (typeof window.renderizarMensagensPrincipais === 'function') {
+  window.renderizarMensagensPrincipais();
+}
       
       const ultimas3 = mensagensFirebase.slice(0, 3);
       const container = document.getElementById("messagesList");
@@ -3218,12 +3216,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (ultimas3.length === 0) {
           container.innerHTML = '<div class="empty-messages"><i class="fas fa-heart"></i><p>✨ Seja o primeiro a deixar uma mensagem! ✨</p></div>';
         } else {
-          container.innerHTML = ultimas3.map(m => `
-            <div class="single-msg">
-              <div class="msg-name">${escapeHtml(m.autor)}</div>
-              <div class="msg-text">${escapeHtml(m.texto)}</div>
-            </div>
-          `).join("");
+        container.innerHTML = ultimas3.map(m => `
+  <div class="single-msg">
+    <div class="msg-name">${m.autor || ""}</div>
+    <div class="msg-text">${m.texto || ""}</div>
+  </div>
+`).join("");
         }
       }
     });
